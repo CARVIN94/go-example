@@ -22,9 +22,6 @@ func Midd(ctx *restful.Context) {
 }
 
 func IndexHandler(ctx *restful.Context) {
-	if !ctx.IsUrlencoded() {
-		return
-	}
 	data := &reply.Object{
 		Object: "SUCCESS",
 	}
