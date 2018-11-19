@@ -5,6 +5,7 @@ import (
 	"github.com/CARVIN94/go-restful"
 )
 
+// Pipe test
 func Pipe(ctx *restful.Context) {
 	defer ctx.Close()
 	data := &pipe.Model{

@@ -10,6 +10,7 @@ import (
 	"github.com/CARVIN94/go-restful"
 )
 
+// Midd test
 func Midd(ctx *restful.Context) {
 	defer ctx.Close()
 	pipe := ctx.Pipe.(*pipe.Model)
@@ -22,6 +23,7 @@ func Midd(ctx *restful.Context) {
 	ctx.ReplyJSON(data)
 }
 
+// IndexHandler test
 func IndexHandler(ctx *restful.Context) {
 	defer ctx.Close()
 	data := &reply.Object{
