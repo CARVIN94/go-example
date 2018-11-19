@@ -6,6 +6,7 @@ import (
 )
 
 func Pipe(ctx *restful.Context) {
+	defer ctx.Close()
 	data := &pipe.Model{
 		State:   1111,
 		Message: "is in pipe",

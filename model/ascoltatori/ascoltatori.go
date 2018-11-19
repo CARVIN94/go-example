@@ -1,6 +1,7 @@
 package ascoltatori
 
 import (
+	util "github.com/CARVIN94/go-util"
 	"github.com/CARVIN94/mgo"
 	"github.com/globalsign/mgo/bson"
 )
@@ -29,7 +30,7 @@ func FindAll() (rows []Model) {
 	defer task.End()
 	err := task.Find(bson.M{}).All(&rows)
 	if err != nil {
-		panic(err)
+		util.PanicOnError(err)
 	}
 	return rows
 }
@@ -40,7 +41,7 @@ func CountTotal() (total int) {
 	defer task.End()
 	total, err := task.Find(bson.M{}).Count()
 	if err != nil {
-		panic(err)
+		util.PanicOnError(err)
 	}
 	return total
 }

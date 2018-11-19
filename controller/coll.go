@@ -6,11 +6,12 @@ import (
 	"github.com/CARVIN94/go-example/model/ascoltatori"
 
 	"github.com/CARVIN94/go-example/model/pipe"
+	"github.com/CARVIN94/go-reply"
 	"github.com/CARVIN94/go-restful"
-	"github.com/CARVIN94/go-util/reply"
 )
 
 func Midd(ctx *restful.Context) {
+	defer ctx.Close()
 	pipe := ctx.Pipe.(*pipe.Model)
 	log.Print(ctx.Pipe)
 	log.Print(pipe.Message)
@@ -22,6 +23,7 @@ func Midd(ctx *restful.Context) {
 }
 
 func IndexHandler(ctx *restful.Context) {
+	defer ctx.Close()
 	data := &reply.Object{
 		Object: "SUCCESS",
 	}
